@@ -2,7 +2,10 @@ import React from 'react';
 
 function ChatForm({text, handleChange, handleSend}) {
     return (
-        <form onSubmit={handleSend}
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            handleSend();
+        }}
         
         >
             <input 
@@ -10,7 +13,7 @@ function ChatForm({text, handleChange, handleSend}) {
                onChange={handleChange}
             />
             <button
-            onClick={handleSend}
+            // onClick={handleSend}
             >Send</button>
 
         </form>
