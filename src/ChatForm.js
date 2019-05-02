@@ -10,7 +10,9 @@ function ChatForm({text, handleChange, handleSend}) {
         >
             <input 
                value={text}
-               onChange={handleChange}
+               onChange={(e) => {
+                   handleChange(e.target.value);
+                }}
             />
             <button
             // onClick={handleSend}
